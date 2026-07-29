@@ -231,6 +231,27 @@ a{color:inherit;text-decoration:none}
 .blog-title{font-family:'Cormorant Garamond',serif;font-size:1.12rem;font-weight:600;color:var(--text);line-height:1.35;margin-bottom:.5rem}
 .blog-desc{font-size:.81rem;color:var(--text-soft);line-height:1.65}
 
+/* TESTIMONIAL */
+.testimonial-section{background:var(--navy);padding:5.5rem 0}
+[data-theme="dark"] .testimonial-section{background:#030810}
+.testimonial-section .section-eyebrow{color:var(--gold-warm)}
+.testimonial-section .section-eyebrow::before{background:var(--gold-warm)}
+.testimonial-section .section-title{color:#EDF2F8}
+.testimonial-section .section-subtitle{color:rgba(237,242,248,.55)}
+.testimonial-card{position:relative;max-width:800px;margin:0 auto;padding:3.5rem 3.8rem;background:rgba(255,255,255,.04);border:1px solid rgba(200,144,10,.22);border-radius:var(--radius);overflow:hidden}
+.testimonial-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-warm),transparent)}
+.testimonial-quote-icon{font-family:'Cormorant Garamond',serif;font-size:9rem;line-height:1;color:var(--gold-warm);opacity:.18;position:absolute;top:.8rem;right:2.5rem;pointer-events:none;user-select:none;font-style:italic}
+.testimonial-text{font-family:'Cormorant Garamond',serif;font-size:clamp(1.18rem,2.3vw,1.48rem);font-weight:400;font-style:italic;line-height:1.82;color:#D8E6F3;margin-bottom:2.2rem;position:relative;z-index:1}
+.testimonial-text strong{font-style:normal;color:var(--gold-warm);font-weight:600}
+.testimonial-divider{height:1px;background:linear-gradient(90deg,rgba(200,144,10,.35),transparent);margin-bottom:1.8rem}
+.testimonial-author{display:flex;align-items:center;gap:1.2rem}
+.testimonial-avatar{width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-warm));display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:.8rem;font-weight:700;color:var(--navy);flex-shrink:0;letter-spacing:.05em;box-shadow:0 0 0 3px rgba(200,144,10,.25)}
+.testimonial-name{font-family:'DM Sans',sans-serif;font-weight:600;font-size:.95rem;color:#EDF2F8;margin-bottom:.2rem}
+.testimonial-role{font-size:.78rem;color:rgba(237,242,248,.5);line-height:1.5}
+.testimonial-link{display:inline-flex;align-items:center;gap:.32rem;margin-top:.55rem;font-size:.75rem;font-weight:500;color:var(--gold-warm);text-decoration:none;letter-spacing:.03em;transition:opacity var(--transition);border-bottom:1px solid rgba(200,144,10,.3);padding-bottom:1px}
+.testimonial-link:hover{opacity:.7}
+@media(max-width:768px){.testimonial-card{padding:2.2rem 1.6rem}.testimonial-section{padding:3.5rem 0}.testimonial-text{font-size:1.1rem}}
+
 /* CONTACT */
 .contact-grid{display:grid;grid-template-columns:1fr 1.65fr;gap:4rem;align-items:start}
 .contact-info{display:flex;flex-direction:column;gap:1.6rem}
@@ -333,6 +354,7 @@ a{color:inherit;text-decoration:none}
       <li><a href="#education">Education</a></li>
       <li><a href="#research">Research</a></li>
       <li><a href="#blog">Blog</a></li>
+      <li><a href="#testimonial">Testimonial</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="nav-actions">
@@ -348,6 +370,7 @@ a{color:inherit;text-decoration:none}
     <a href="#education" onclick="closeNav()">Education</a>
     <a href="#research" onclick="closeNav()">Research</a>
     <a href="#blog" onclick="closeNav()">Blog</a>
+    <a href="#testimonial" onclick="closeNav()">Testimonial</a>
     <a href="#contact" onclick="closeNav()">Contact</a>
   </div>
 </nav>
@@ -698,6 +721,35 @@ a{color:inherit;text-decoration:none}
       <div class="blog-card"><div class="blog-card-soon">Coming Soon</div><div class="blog-card-banner"></div><div class="blog-card-body"><div class="blog-category">Research &amp; Economics</div><div class="blog-title">R&amp;D and Innovation in Pakistan: What the Data Actually Says</div><div class="blog-desc">My thesis findings — why R&amp;D spending alone doesn't drive innovation, and what Pakistani firms are actually missing.</div></div></div>
       <div class="blog-card"><div class="blog-card-soon">Coming Soon</div><div class="blog-card-banner"></div><div class="blog-card-body"><div class="blog-category">Digital Building</div><div class="blog-title">Building Your First Web Tool Without a CS Degree</div><div class="blog-desc">How I built and deployed two live applications at a government office using intuition, no-code tools, and stubbornness.</div></div></div>
       <div class="blog-card"><div class="blog-card-soon">Coming Soon</div><div class="blog-card-banner"></div><div class="blog-card-body"><div class="blog-category">Career &amp; Growth</div><div class="blog-title">From a Government College in Toba Tek Singh to Building for the World</div><div class="blog-desc">The honest version of how I got here — what I got wrong, what I stumbled into, and what I'm still figuring out.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="testimonial-section" id="testimonial">
+  <div class="container">
+    <div class="section-header" style="text-align:center">
+      <div class="section-eyebrow" style="justify-content:center">What Others Say</div>
+      <h2 class="section-title" style="color:#EDF2F8">From someone who saw the work firsthand</h2>
+      <p class="section-subtitle" style="margin:0 auto;text-align:center;color:rgba(237,242,248,.5)">A recommendation from my thesis supervisor at GCUF</p>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-quote-icon">&ldquo;</div>
+      <blockquote class="testimonial-text">
+        I supervised Shahzaib&rsquo;s final-year research thesis, where he worked with a complex micro-level firm dataset. He demonstrated strong skills in <strong>data cleaning, coding for econometric model estimation, and research writing</strong>. He was dedicated, quick to learn, and consistently receptive to feedback. I wish him every success in his future career.
+      </blockquote>
+      <div class="testimonial-divider"></div>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">ZY</div>
+        <div>
+          <div class="testimonial-name">Dr. Muhammad Zeeshan Younas</div>
+          <div class="testimonial-role">Lecturer, Applied Economics &amp; Research Methods<br>GCUF Affiliated Govt. Graduate College · Higher Education Department Punjab</div>
+          <a class="testimonial-link" href="https://linkedin.com/in/shahzaibali-economist" target="_blank" rel="noopener">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--gold-warm)"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            View full recommendation on LinkedIn
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
