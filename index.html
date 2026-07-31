@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
-<head>
+  <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S3LN8T516G"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-S3LN8T516G');
+  </script>
+    
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shahzaib Ali — I Build What's Missing</title>
@@ -932,7 +941,12 @@ form.addEventListener('submit',async e=>{
   e.preventDefault();submitBtn.textContent='Sending…';submitBtn.disabled=true;
   try{
     const r=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});
-    if(r.ok){form.reset();formSuccess.classList.add('show');submitBtn.style.display='none';}
+    if(r.ok){
+  form.reset();
+  formSuccess.classList.add('show');
+  submitBtn.style.display='none';
+  gtag('event','form_submission',{'event_category':'Contact','event_label':'Portfolio Contact Form'}); // 👈 add this
+}
     else{submitBtn.textContent='Send Message';submitBtn.disabled=false;alert('Error. Please email mr.shahzaibali@yahoo.com directly.');}
   }catch{submitBtn.textContent='Send Message';submitBtn.disabled=false;alert('Network error. Please email mr.shahzaibali@yahoo.com');}
 });
